@@ -9,6 +9,14 @@ namespace RPG_Map
     
     internal class Program
     {
+        // usage: map[y, x]
+
+        // map legend:
+        // ^ = mountain
+        // ` = grass
+        // ~ = water
+        // * = trees
+
         static char[,] map = new char[,] // dimensions defined by following data:
     {
         {'^','^','^','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
@@ -24,14 +32,6 @@ namespace RPG_Map
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
     };
-
-        // usage: map[y, x]
-
-        // map legend:
-        // ^ = mountain
-        // ` = grass
-        // ~ = water
-        // * = trees
 
         static void Main(string[] args)
         {
