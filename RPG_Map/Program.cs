@@ -57,6 +57,7 @@ namespace RPG_Map
                 printLine += "-";
             }
             printLine += "+";
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(printLine);
 
             //increments the rows of the array
@@ -66,7 +67,9 @@ namespace RPG_Map
                 for (int j=0; j<scale; j++)
                 {
                     //starts border
-                    printLine = "|";
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("|");
+                    
 
                     //increments through the columns of array
                     for (int k=0; k < map.GetLength(1); k++)
@@ -74,14 +77,38 @@ namespace RPG_Map
                         //scales rows to correct size
                         for (int l=0; l<scale; l++)
                         {
-                            printLine += map[i,k];
+                            //detects character and what color to draw
+                            switch (map[i,k])
+                            {
+                                case '^':
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    break;
+
+                                case '`':
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    break;
+
+                                case '~':
+                                    Console.ForegroundColor = ConsoleColor.Blue;
+                                    break;
+
+                                case '*':
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    break;
+
+                                default:
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    break;
+                            }
+
+                            Console.Write(map[i,k]);
                         }
                     }
-                    //finishes line
-                    printLine += "|";
 
-                    //prints line to console.
-                    Console.WriteLine(printLine);
+                    //finishes line
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("|");
+
                 }
             }
 
@@ -92,6 +119,7 @@ namespace RPG_Map
                 printLine += "-";
             }
             printLine += "+";
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(printLine);
         }
     }
