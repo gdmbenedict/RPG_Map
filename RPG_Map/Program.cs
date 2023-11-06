@@ -57,7 +57,36 @@ namespace RPG_Map
                     Console.WriteLine("\nThat is not an integer.\nPlease enter the integer scale of the map:");
                 }
             }
-            
+
+            Console.WriteLine();
+
+            //prints map legend
+            Console.WriteLine("Legend:");
+
+            //mountains
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("^");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" Mountain");
+
+            //grass
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("`");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" Grass");
+
+            //water
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("~");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" Water");
+
+            //trees
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("*");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" Trees");
+
             Console.WriteLine();
 
             DisplayMap(scale);
