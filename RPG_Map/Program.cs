@@ -33,9 +33,35 @@ namespace RPG_Map
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
     };
 
+        static int scale;
+        
+
         static void Main(string[] args)
         {
-            DisplayMap(3);
+            bool check = false;
+
+            //prompt user to input
+            Console.WriteLine("Welcome to the map print program.");
+            Console.Write("Please enter the integer scale of the map:");
+
+            while (!check)
+            {
+
+                //get int from user
+                string scalar = Console.ReadLine();
+
+                check = int.TryParse(scalar, out scale);
+
+                if (!check)
+                {
+                    Console.WriteLine("\nThat is not an integer.\nPlease enter the integer scale of the map:");
+                }
+            }
+            
+            Console.WriteLine();
+
+            DisplayMap(scale);
+
             Console.ReadLine();
         }
 
